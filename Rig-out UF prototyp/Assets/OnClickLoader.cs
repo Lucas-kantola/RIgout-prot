@@ -6,9 +6,7 @@ public class OnClickLoader : MonoBehaviour
 {
 
     public ArCursor cursor;
-    public GameObject Sofa;
-    public GameObject Beanbag;
-    public GameObject Armchair;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,17 +22,23 @@ public class OnClickLoader : MonoBehaviour
 
     public void changeToSofa()
     {
-        cursor.cursorChildObject = Sofa;
+        cursor.sofa.SetActive(true);
+        cursor.beanbag.SetActive(false);
+        cursor.armchair.SetActive(false);
     }
 
     public void changeToBeanbag()
     {
-        cursor.cursorChildObject = Beanbag;
+        cursor.beanbag.SetActive(true);
+        cursor.sofa.SetActive(false);
+        cursor.armchair.SetActive(false);
     }
 
     public void changeToArmchair()
     {
-        cursor.cursorChildObject = Armchair;
+        cursor.armchair.SetActive(true);
+        cursor.beanbag.SetActive(false);
+        cursor.sofa.SetActive(false);
     }
 
 
