@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50911c26f6d24ed42b86d31a083ab395, type: 3}
+  m_Name: "F\xE5t\xF6lj"
+  m_EditorClassIdentifier: 
+  displayName: "F\xE5t\xF6lj"
+  icon: {fileID: 21300000, guid: 7bb82b2b9c9168e4fbcf26e05b20f777, type: 3}
+  prefab: {fileID: 3202836257471122422, guid: e6730160f0781934195e6fdf62dbe9e7, type: 3}
+  id: armchair
