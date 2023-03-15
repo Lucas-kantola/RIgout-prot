@@ -11,11 +11,12 @@ public class ContentManager : MonoBehaviour
     public CategoryItem currentMenu;
     public GameObject menuItemPrefab;
     [Space]
-    public OnClickLoader ocl;
+    public OnClickLoader onClickLoader;
     [Header("UI Elements")]
     public TextMeshProUGUI title;
     public GridLayoutGroup grid;
     public Button backButton;
+    public Sidebar sidebar;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,14 @@ public class ContentManager : MonoBehaviour
         RefreshMenu();
         backButton.onClick.AddListener(new UnityAction(() =>
         {
-            currentMenu = currentMenu.parent;
-            RefreshMenu();
+            if (currentMenu.parent)
+            {
+                currentMenu = currentMenu.parent;
+                RefreshMenu();
+            } else
+            {
+                sidebar.Close();
+            }
         }));
     }
 
@@ -40,10 +47,10 @@ public class ContentManager : MonoBehaviour
 
         foreach(MenuItem item in currentMenu.items)
         {
-            MenuItemObject menuItem = Instantiate(menuItemPrefab, grid.transform).GetComponent<MenuItemObject>();
-            menuItem.template = item;
+            MenuItemDisplay display = Instantiate(menuItemPrefab, grid.transform).GetComponent<MenuItemDisplay>();
+            display.template = item;
 
-            Button button = menuItem.GetComponent<Button>();
+            Button button = display.GetComponent<Button>();
             UnityAction listener;
             if (item is CategoryItem)
             {
@@ -65,13 +72,10 @@ public class ContentManager : MonoBehaviour
             }
             button.onClick.AddListener(listener);
         }
-
-        backButton.gameObject.SetActive(currentMenu.parent != null);
     }
 
     public void SelectItem(FurnitureItem item)
     {
-        Debug.Log($"Loaded {item.displayName}");
-        ocl.SetSelected(item);
+        onClickLoader.SetSelected(item);
     }
 }

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50911c26f6d24ed42b86d31a083ab395, type: 3}
+  m_Name: Catlamp
+  m_EditorClassIdentifier: 
+  displayName: Lampa katt
+  icon: {fileID: 21300000, guid: 3e52ecbbf8b489c42835beb0f16f902c, type: 3}
+  prefab: {fileID: 7837825973130518612, guid: d8083f8fef739dc488665f7db732748c, type: 3}
+  id: catlamp

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50911c26f6d24ed42b86d31a083ab395, type: 3}
+  m_Name: "F\xE5t\xF6lj_Lila"
+  m_EditorClassIdentifier: 
+  displayName: "F\xE5t\xF6lj Textil"
+  icon: {fileID: 21300000, guid: 078cfd732f04f154f9f3e952ddeaa3aa, type: 3}
+  prefab: {fileID: 3234919007391005876, guid: 80afa7bbad9230f4d810462e6a8aed0d, type: 3}
+  id: armchair2

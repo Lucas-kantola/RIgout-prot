@@ -11,11 +11,6 @@ public class Sidebar : MonoBehaviour
     private Vector3 openTarget;
     private Vector3 closedTarget;
     private float x;
-    [Space]
-    public GameObject returnButton;
-    private Image returnButtonImage;
-    [Range(0.0f, 255.0f)]
-    public int opacity;
 
 
     // Start is called before the first frame update
@@ -26,10 +21,6 @@ public class Sidebar : MonoBehaviour
         closedTarget = new Vector3(-tf.rect.width / 2, tf.rect.height / 2, tf.position.z);
         tf.position = open ? openTarget : closedTarget;
         x = open ? 1.0f : 0.0f;
-        if (returnButton)
-        {
-            returnButtonImage = returnButton.GetComponent<Image>();
-        }
     }
 
     // Update is called once per frame
@@ -46,13 +37,6 @@ public class Sidebar : MonoBehaviour
         float t = easeInOut(x);
         
         tf.position = Vector3.Lerp(closedTarget, openTarget, t);
-
-        if (returnButton)
-        {
-            returnButton.SetActive(open);
-            returnButtonImage.color = new Color(returnButtonImage.color.r, returnButtonImage.color.g, returnButtonImage.color.b,
-                Mathf.Lerp(0f, opacity, t))/255;
-        }
     }
 
     private float easeInOut(float x)

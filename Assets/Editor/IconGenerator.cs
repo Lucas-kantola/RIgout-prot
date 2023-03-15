@@ -19,7 +19,13 @@ public class IconGenerator : MonoBehaviour
         camera = GetComponent<Camera>();
     }
 
-    [ContextMenu("Screenshot")]
+    [ContextMenu("Take Screenshot")]
+    private void ManualScreenshot()
+    {
+        TakeScreenshot($"{Application.dataPath}/{pathFolder}/screenshot.png");
+    }
+
+    [ContextMenu("Generate Icons")]
     private void ProcessScreenshots()
     {
         StartCoroutine(Screenshot());

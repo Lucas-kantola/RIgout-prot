@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6380641356210550220}
   - component: {fileID: 5414829296464409024}
   - component: {fileID: 7625791904445714357}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back rester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,9 +92,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1064572366802243162}
-  m_Layer: 0
+  - component: {fileID: 8298667482517030235}
+  m_Layer: 6
   m_Name: Sofa model
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +119,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &8298667482517030235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400202724672640224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.03, y: 0.97, z: 0.88}
+  m_Center: {x: 0, y: 0.47, z: 0}
 --- !u!1 &4601314401266241513
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +143,7 @@ GameObject:
   - component: {fileID: 7871640645366532417}
   - component: {fileID: 5604074626266404295}
   - component: {fileID: 2136888898320081031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arms and cushion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +226,7 @@ GameObject:
   - component: {fileID: 3659226310280008362}
   - component: {fileID: 1833557273731642396}
   - component: {fileID: 8298560496042832890}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottom_support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +309,7 @@ GameObject:
   - component: {fileID: 4503388780976593406}
   - component: {fileID: 9004959411538585599}
   - component: {fileID: 8670246348245548862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}

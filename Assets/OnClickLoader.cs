@@ -3,31 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System;
+using UnityEngine.EventSystems;
 
 public class OnClickLoader : MonoBehaviour
 {
+    public MenuItemDisplay selectionPreview;
 
-    public ArCursor cursor;
-    public Button placeButton;
+    private ArCursor cursor;
     private FurnitureItem selected;
 
     private void Start()
     {
-        placeButton.onClick.AddListener(new UnityAction(() => {
-            PlaceSelected();
-        }));
+        cursor = GetComponent<ArCursor>();
 
         SetSelected(null);
+
+        if (selectionPreview == null)
+        {
+            Debug.LogWarning($"{transform.name}: selectionPreview is null");
+        }
     }
 
     public void SetSelected(FurnitureItem item)
     {
+        Debug.Log($"Select {item.displayName}");
         selected = item;
-        placeButton.interactable = selected != null;
+        if (selectionPreview)
+        {
+            selectionPreview.template = selected;
+            selectionPreview.gameObject.SetActive(selected != null);
+        }
     }
 
-    public void PlaceSelected()
+    public GameObject PlaceSelected(Pose target)
     {
-        Debug.Log($"Placed {selected.displayName}");
+        if (target == null)
+            return null;
+        Debug.Log($"Place {selected.displayName}");
+        return Instantiate(selected.prefab, target.position, target.rotation);
+    }
+
+    public GameObject PlaceSelected(Transform target)
+    {
+        return PlaceSelected(new Pose(target.position, target.rotation));
     }
 }
