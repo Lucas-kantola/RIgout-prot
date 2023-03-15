@@ -7,10 +7,6 @@ using UnityEngine.XR.ARFoundation;
 
 public class ArCursor : MonoBehaviour
 {
-    public GameObject sofa;
-    public GameObject armchair;
-    public GameObject beanbag;
-
     public GameObject cursorChildObject;
     public ARRaycastManager raycastManager;
 
@@ -19,10 +15,6 @@ public class ArCursor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sofa.SetActive(false);
-        armchair.SetActive(false);
-        beanbag.SetActive(true);
-        cursorChildObject = beanbag;
 
     }
 
@@ -47,5 +39,4 @@ public class ArCursor : MonoBehaviour
             transform.rotation = hits[0].pose.rotation; 
         }
     }
-
 }

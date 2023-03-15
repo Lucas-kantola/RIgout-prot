@@ -1,45 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class OnClickLoader : MonoBehaviour
 {
 
     public ArCursor cursor;
+    public Button placeButton;
+    private FurnitureItem selected;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        placeButton.onClick.AddListener(new UnityAction(() => {
+            PlaceSelected();
+        }));
+
+        SetSelected(null);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetSelected(FurnitureItem item)
     {
-        
+        selected = item;
+        placeButton.interactable = selected != null;
     }
 
-    public void changeToSofa()
+    public void PlaceSelected()
     {
-        cursor.sofa.SetActive(true);
-        cursor.beanbag.SetActive(false);
-        cursor.armchair.SetActive(false);
+        Debug.Log($"Placed {selected.displayName}");
     }
-
-    public void changeToBeanbag()
-    {
-        cursor.beanbag.SetActive(true);
-        cursor.sofa.SetActive(false);
-        cursor.armchair.SetActive(false);
-    }
-
-    public void changeToArmchair()
-    {
-        cursor.armchair.SetActive(true);
-        cursor.beanbag.SetActive(false);
-        cursor.sofa.SetActive(false);
-    }
-
-
 }

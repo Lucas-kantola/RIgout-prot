@@ -10,6 +10,8 @@ public class ContentManager : MonoBehaviour
 {
     public CategoryItem currentMenu;
     public GameObject menuItemPrefab;
+    [Space]
+    public OnClickLoader ocl;
     [Header("UI Elements")]
     public TextMeshProUGUI title;
     public GridLayoutGroup grid;
@@ -39,8 +41,7 @@ public class ContentManager : MonoBehaviour
         foreach(MenuItem item in currentMenu.items)
         {
             MenuItemObject menuItem = Instantiate(menuItemPrefab, grid.transform).GetComponent<MenuItemObject>();
-            menuItem.text = item.displayName;
-            menuItem.icon = item.icon;
+            menuItem.template = item;
 
             Button button = menuItem.GetComponent<Button>();
             UnityAction listener;
@@ -71,5 +72,6 @@ public class ContentManager : MonoBehaviour
     public void SelectItem(FurnitureItem item)
     {
         Debug.Log($"Loaded {item.displayName}");
+        ocl.SetSelected(item);
     }
 }
